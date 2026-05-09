@@ -1,0 +1,40 @@
+services:
+  - type: worker
+    name: music-checklist-bot
+    env: python
+    region: frankfurt
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: EDITOR_CHAT_ID
+        sync: false
+      - key: CHECKLIST_PRICE_XTR
+        value: "250"
+      - key: REVIEW_PRICE_XTR
+        value: "500"
+      - key: GOOGLE_SHEET_ID
+        sync: false
+      - key: PDF_FILE_PATH
+        value: ./files/18-kriteriev.pdf
+      - key: GCS_TYPE
+        sync: false
+      - key: GCS_PROJECT_ID
+        sync: false
+      - key: GCS_PRIVATE_KEY_ID
+        sync: false
+      - key: GCS_PRIVATE_KEY
+        sync: false
+      - key: GCS_CLIENT_EMAIL
+        sync: false
+      - key: GCS_CLIENT_ID
+        sync: false
+      - key: GCS_AUTH_URI
+        sync: false
+      - key: GCS_TOKEN_URI
+        sync: false
+      - key: GCS_AUTH_PROVIDER
+        sync: false
+      - key: GCS_CLIENT_CERT_URL
+        sync: false
